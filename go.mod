@@ -6,6 +6,8 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
 	github.com/aws/aws-sdk-go v1.34.0
 	github.com/go-ole/go-ole v1.2.4 // indirect
+	github.com/grafov/m3u8 v0.11.1
+	github.com/kr/pretty v0.2.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.0
 	github.com/mssola/user_agent v0.5.2
 	github.com/nareix/joy5 v0.0.0-20200712071056-a55089207c88
