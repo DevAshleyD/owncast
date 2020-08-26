@@ -96,7 +96,9 @@ func SetClientActive(clientID string) {
 func RemoveClient(clientID string) {
 	log.Trace("Removing the client:", clientID)
 
+	l.Lock()
 	delete(_stats.Clients, clientID)
+	l.Unlock()
 }
 
 func saveStatsToFile() error {
