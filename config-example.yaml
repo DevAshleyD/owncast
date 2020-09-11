@@ -2,7 +2,7 @@ instanceDetails:
   name: Owncast
   title: Owncast Demo Server
   summary: "This is brief summary of whom you are or what your stream is. You can read more about it at owncast.online.  You can edit this description in your config file."
-  
+
   logo:
     small: /img/logo128.png
     large: /img/logo256.png
@@ -31,3 +31,9 @@ videoSettings:
   streamQualities:
     - medium:
       videoBitrate: 800
+
+# Enable YP to be listed in the Owncast directory and let people discover your instance.
+yp:
+  enabled: true
+  # You must specify the public URL of your host that you want the directory to link to.
+  instanceURL: http://yourhost.com

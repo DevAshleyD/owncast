@@ -41,7 +41,9 @@ func SetStreamAsConnected() {
 		chunkPath = config.Config.GetPrivateHLSSavePath()
 	}
 
-	_yp.Start()
+	if _yp != nil {
+		_yp.Start()
+	}
 
 	ffmpeg.StartThumbnailGenerator(chunkPath, config.Config.VideoSettings.HighestQualityStreamIndex)
 }
@@ -51,6 +53,9 @@ func SetStreamAsDisconnected() {
 	_stats.StreamConnected = false
 	_stats.LastDisconnectTime = utils.NullTime{time.Now(), true}
 
-	_yp.Stop()
+	if _yp != nil {
+		_yp.Stop()
+	}
+
 	ffmpeg.ShowStreamOfflineState()
 }
