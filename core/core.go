@@ -18,6 +18,7 @@ import (
 var (
 	_stats   *models.Stats
 	_storage models.ChunkStorageProvider
+	_yp      *yp.YP
 )
 
 //Start starts up the core processing
@@ -39,8 +40,7 @@ func Start() error {
 		return err
 	}
 
-	yp := yp.YP{}
-	go yp.Register(GetConnectedAtTime)
+	_yp = yp.NewYP(GetStatus)
 
 	chat.Setup(ChatListenerImpl{})
 
@@ -82,8 +82,4 @@ func resetDirectories() {
 		os.MkdirAll(path.Join(config.Config.GetPrivateHLSSavePath(), strconv.Itoa(0)), 0777)
 		os.MkdirAll(path.Join(config.Config.GetPublicHLSSavePath(), strconv.Itoa(0)), 0777)
 	}
-}
-
-func GetConnectedAtTime() utils.NullTime {
-	return _stats.LastConnectTime
 }
