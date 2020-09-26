@@ -66,12 +66,30 @@ videoSettings:
 files:
   maxNumberInPlaylist: 4
 
-# Read https://github.com/gabek/owncast/blob/master/doc/S3.md for S3 config details.
-s3:
-  enabled: false
-  endpoint: https://s3.us-west-2.amazonaws.com
-  servingEndpoint: https://yourcdn.example
-  accessKey: ABC12342069
-  secret: lolomgqwtf49583949
-  region: us-west-2
-  bucket: myvideo
+# See https://owncast.online/docs/configuration/ for more details
+
+instanceDetails:
+  name: Owncast
+  title: Owncast
+  summary: "This is brief summary of whom you are or what your stream is. You can read more about it at owncast.online.  You can edit this description in your config file."
+
+  logo:
+    small: /img/logo128.png
+    large: /img/logo256.png
+
+  tags:
+    - music
+    - software
+    - streaming
+
+  # https://owncast.online/docs/configuration/#external-links
+  # for full list of supported social links.  All optional.
+  socialHandles:
+    - platform: github
+      url: http://github.com/owncast/owncast
+    - platform: mastodon
+      url: http://mastodon.something/owncast
+
+videoSettings:
+  # Change this value and keep it secure.  Treat it like a password to your live stream.
+  streamingKey: abc123
