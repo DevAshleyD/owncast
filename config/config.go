@@ -3,9 +3,9 @@ package config
 import (
 	"errors"
 	"io/ioutil"
+	"log"
 
-	"github.com/gabek/owncast/utils"
-	log "github.com/sirupsen/logrus"
+	"github.com/DevAshleyD/owncast/utils"
 	"gopkg.in/yaml.v2"
 )
 
